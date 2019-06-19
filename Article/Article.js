@@ -11,7 +11,7 @@ class Article {
     // console.log(this.expandButton);
 
     // Using your expandButton reference, update the text on your expandButton to say "expand"
-    this.expandButton.textContent = "expand"
+    this.expandButton.textContent = "Click to Expand";
 
     // Set a click handler on the expandButton reference, calling the expandArticle method.
     this.expandButton.addEventListener('click', () => this.expandArticle());
@@ -22,6 +22,14 @@ class Article {
     // console.log('click works?')
 
     this.domElement.classList.toggle('article-open');
+
+    // add functionality to change text on the button
+    if (this.expandButton.innerHTML === "Click to Close") {
+      this.expandButton.innerHTML = "Click to Expand";
+      //console.log(this.expandButton)
+    } else {
+      this.expandButton.innerHTML = "Click to Close";
+    }
 
   }
 }
