@@ -64,6 +64,38 @@
 .menu--open {
   display: block;
 }
+.slide-in {
+  -webkit-animation: slide-in 1s ease-out both;
+  animation: slide-in 1s ease-out both;
+}
+@keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-out {
+  -webkit-animation: slide-out 1s ease-out both;
+  animation: slide-out 1s ease-out both;
+}
+@keyframes slide-out {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
 .articles {
   margin-top: 95px;
 }
