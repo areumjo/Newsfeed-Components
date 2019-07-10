@@ -43,10 +43,7 @@ headerEle.appendChild(menu);
 menu.appendChild(unList);
 menu.classList.add('menu');
 
-menuItems.forEach(it => {
-  console.log('checking', it)
-  headerEle.appendChild(createMenu(it));
-})
+menuItems.forEach(it => headerEle.appendChild(createMenu(it)));
 
 function createMenu(item) {
  
@@ -60,5 +57,4 @@ function createMenu(item) {
 const btn = document.querySelector('.menu-button')
 btn.addEventListener('click', () => {
   menu.classList.toggle('menu--open');
-  console.log('work?')
 })

@@ -109,6 +109,47 @@ const data = [
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article
 
 */
+const articles = document.querySelector('.articles');
+
+data.forEach( arti => {
+    articles.appendChild(createArticle(arti.title, arti.date, arti.firstParagraph, arti.secondParagraph, arti.thirdParagraph))
+})
+
+function createArticle(title, date, firstP, sencondP, thirdP) {
+    const articleEle = document.createElement('div');
+    articles.appendChild(articleEle);
+    articleEle.classList.add("article");
+    
+    const titleEle = document.createElement('h2');
+    articleEle.appendChild(titleEle);
+    titleEle.textContent = title;
+
+    const paragraph = document.createElement('p');
+    articleEle.appendChild(paragraph);
+    paragraph.textContent = date;
+
+    const firstPara = document.createElement('p');
+    articleEle.appendChild(firstPara);
+    firstPara.textContent = firstP;
+
+    const secondPara = document.createElement('p');
+    articleEle.appendChild(secondPara);
+    secondPara.textContent = sencondP;
+
+    const thirdPara = document.createElement('p');
+    articleEle.appendChild(thirdPara);
+    thirdPara.textContent = thirdP;
+
+    const btn = document.createElement('span');
+    articleEle.appendChild(btn);
+    btn.textContent = "open to click"
+    btn.classList.add("expandButton");
+    btn.addEventListener('click', () => {
+        articleEle.classList.toggle('article-open');
+    })
+    
+    return articleEle
+}
