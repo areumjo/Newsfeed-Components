@@ -85,6 +85,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Autumn from WEB21 Lambda School',
+    date: 'July 10th, 2019',
+    firstParagraph: `Hello, it's Autumn. I am wondering...`,
+
+    secondParagraph: `One month is Lambda school, I learned so many things like HTML, CSS, LESS, JavaScript and I am learning React at the same time.`,
+
+    thirdParagraph: `How to make a component in React. 
+    1) Stateful component with class && constructor && super
+    2) Functional component just like what we are doing right now.`
+  },
+  {
+    title: 'Short one',
+    date: 'July 10th, 2029',
+    firstParagraph: `"Where do you see yourself in 10 years?`,
+
+    secondParagraph: `I have no idea. 10 years ago I was a graduate student studying neuroscience. Loved science so much, I wanted to a scientist for life.`,
+
+    thirdParagraph: `But now I am in Lambda School! Who knows I would learn "programming". How fun and unexpected life is!`
   }
 ];
 
@@ -145,10 +165,19 @@ function createArticle(title, date, firstP, sencondP, thirdP) {
 
     const btn = document.createElement('span');
     articleEle.appendChild(btn);
-    btn.textContent = "open to click"
+    btn.textContent = "Click to Expand"
     btn.classList.add("expandButton");
     btn.addEventListener('click', () => {
         articleEle.classList.toggle('article-open');
+        
+
+        if (articleEle.className === 'article article-open') {
+            btn.textContent = "Click to Close"
+            btn.style.color= "red"
+        } else {
+            btn.textContent = "Click to Expand"
+            btn.style.color= "grey"
+        }
     })
     
     return articleEle
